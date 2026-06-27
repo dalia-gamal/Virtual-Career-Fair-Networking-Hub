@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Link. - Login & Register</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<header class="navbar">
+    <a href="HomePage.html" class="logo">Link<span class="highlight">.</span></a>
+
+    <nav>
+        <ul class="nav-links">
+            <li><a href="#" class="btn2"><span class="spn2">Features</span></a></li>
+            <li><a href="#" class="btn2"><span class="spn2">Events</span></a></li>
+            <li><a href="Login.html" class="btn2"><span class="spn2">Login</span></a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="auth-container">
+    <div class="auth-card" id="authCard">
+        
+        <!-- LOGIN FORM -->
+        <div class="form-container login-container" id="loginForm">
+            <h2>Welcome Back</h2>
+            <p>Login to your Link. account</p>
+            <form action="login.php" method="POST">
+                <div class="input-group">
+                    <input type="email" name="email" required placeholder=" ">
+                    <label>Email Address</label>
+                </div>
+                <div class="input-group">
+                    <input type="password" name="password" required placeholder=" ">
+                    <label>Password</label>
+                </div>
+                <button type="submit" class="auth-btn">Login</button>
+            </form>
+            <p class="switch-form">Don't have an account? <span onclick="toggleAuth()">Register</span></p>
+        </div>
+
+        <!-- REGISTER FORM -->
+        <div class="form-container register-container hidden" id="registerForm">
+            <h2>Create Account</h2>
+            <p>Join Link. and build your future</p>
+            
+            <form action="register.php" method="POST">
+                <div class="role-selector">
+                    <input type="radio" id="student" name="role" value="student" checked>
+                    <label for="student">Student</label>
+                    
+                    <input type="radio" id="recruiter" name="role" value="recruiter">
+                    <label for="recruiter">Recruiter</label>
+                </div>
+
+                <div class="input-group">
+                    <input type="text" name="full_name" required placeholder=" ">
+                    <label>Full Name</label>
+                </div>
+                <div class="input-group">
+                    <input type="email" name="email" required placeholder=" ">
+                    <label>Email Address</label>
+                </div>
+                <div class="input-group">
+                    <input type="password" name="password" required placeholder=" ">
+                    <label>Password</label>
+                </div>
+                <button type="submit" class="auth-btn">Register</button>
+            </form>
+            <p class="switch-form">Already have an account? <span onclick="toggleAuth()">Login</span></p>
+        </div>
+
+    </div>
+</div>
+
+<script>
+    function toggleAuth() {
+        const loginForm = document.getElementById('loginForm');
+        const registerForm = document.getElementById('registerForm');
+        
+        if (loginForm.classList.contains('hidden')) {
+            loginForm.classList.remove('hidden');
+            registerForm.classList.add('hidden');
+        } else {
+            loginForm.classList.add('hidden');
+            registerForm.classList.remove('hidden');
+        }
+    }
+</script>
+
+<footer class="main-footer">
+    <div class="footer-container">
+        <div class="footer-column">
+            <h3>Link<span class="highlight">.</span></h3>
+            <p>Empowering your professional journey. Connect with top recruiters, expand your network, and build your future instantly.</p>
+        </div>
+        
+        <div class="footer-column">
+            <ul>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Partnerships</a></li>
+                <li><a href="#">Contact Support</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="footer-bottom">
+        <p>© 2026 Link. All rights reserved.</p>
+    </div>
+</footer>
+
+</body>
+</html>
